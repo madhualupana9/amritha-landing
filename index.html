@@ -121,11 +121,24 @@
     color: #666;
 }
 
+.floating-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #444;
+}
+
 /* Mobile specific fix */
 @media (max-width: 768px) {
     .floating-contact {
         right: 16px;
         bottom: 16px;
+        top: auto;
+        transform: none;
     }
 
     .floating-form {
@@ -141,8 +154,9 @@
         overflow-y: auto;
         padding-bottom: 90px;
         transition: bottom 0.35s ease;
-        z-index: 9999;
+        z-index: 10000;
     }
+
 
     .floating-form.active {
         bottom: 0;
@@ -1612,6 +1626,9 @@
     </button>
 
     <div class="floating-form">
+        <button type="button" class="floating-close">
+    <i class="ti ti-x"></i>
+</button>
         <h4>Talk to Our Care Team</h4>
         <p>Get guidance on assisted living & rehabilitation</p>
 
@@ -1648,19 +1665,49 @@
 <script>
 const toggleBtn = document.querySelector('.floating-toggle');
 const floatingForm = document.querySelector('.floating-form');
+const closeBtn = document.querySelector('.floating-close');
 
-toggleBtn.addEventListener('click', () => {
-    floatingForm.style.display =
-        floatingForm.style.display === 'block' ? 'none' : 'block';
-});
+toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
 
-// Close when clicking outside
-document.addEventListener('click', (e) => {
-    if (!e.target.closest('.floating-contact')) {
-        floatingForm.style.display = 'none';
+    toggleBtn.style.display = 'none';
+    floatingForm.style.display = 'block';
+
+    if (window.innerWidth <= 768) {
+        floatingForm.classList.add('active'); // mobile bottom sheet
+    } else {
+        // desktop popup
+        floatingForm.style.display = 'block';
     }
 });
+
+
+// Close button
+closeBtn.addEventListener('click', () => {
+    closeForm();
+});
+
+// Click outside (desktop only)
+document.addEventListener('click', (e) => {
+    if (
+        window.innerWidth > 768 &&
+        !e.target.closest('.floating-contact')
+    ) {
+        closeForm();
+    }
+});
+
+function closeForm() {
+    floatingForm.classList.remove('active');
+    floatingForm.style.display = 'none';
+    toggleBtn.style.display = 'flex';
+}
+
+floatingForm.addEventListener('click', (e) => {
+    e.stopPropagation();
+});
 </script>
+
 
         <script>
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
