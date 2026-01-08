@@ -477,7 +477,7 @@
             <div class="col-xl-6">
                 <div class="banner-content" data-group="images" data-cues="slideInUp" data-duration="900">
                     <span class="top-title">WELCOME TO AMRITHA ELDER CARE</span>
-                    <h1>Happy Aging & <span class="word-mark">Elegant</span> Living for Seniors</h1>
+                    <h1>Happy Aging & <span class="word-mark">Elegant</span> Living for Elders</h1>
                     <p>
                         Amritha Elder Care offers premium assisted living, active Elder Care and advanced 
                         medical rehabilitation in a secure, compassionate and professionally managed environment 
@@ -541,7 +541,7 @@
             <div class="col-lg-4">
                 <div class="work-content" data-cues="slideInUp" data-duration="900">
                     <h3>
-                        We create secure, elegant and emotionally uplifting environments where seniors feel respected,
+                        We create secure, elegant and emotionally uplifting environments where elders feel respected,
                         valued and empowered to live with confidence.
                     </h3>
 
@@ -742,7 +742,7 @@
                         <div class="services-content">
                             <h3>Personalized Care That Nurtures Body, Mind and Spirit</h3>
                             <p>
-                                At Amritha Elder Care, our services are thoughtfully designed to support seniors
+                                At Amritha Elder Care, our services are thoughtfully designed to support elders
                                 through assisted living, active community life and advanced rehabilitation, ensuring
                                 comfort, safety and emotional well-being at every stage.
                             </p>
@@ -814,7 +814,7 @@
                     <div>
                         <img src="assets/images/icon/fun-fact4.png" alt="fun-fact">
                         <h2><span class="counter">500</span>+</h2>
-                        <p>Seniors Supported <br>with Compassion</p>
+                        <p>Elders Supported <br>with Compassion</p>
                     </div>
                 </div>
             </div>
@@ -852,7 +852,7 @@
                     <p>
                         Amritha Elder Care is a purpose-driven senior care and rehabilitation initiative founded by
                         experienced professionals from healthcare and allied sectors. We are committed to creating
-                        a secure, elegant and emotionally uplifting environment where seniors live with confidence,
+                        a secure, elegant and emotionally uplifting environment where elders live with confidence,
                         respect and a sense of belonging.
                     </p>
 
@@ -867,7 +867,7 @@
                                 <div class="flex-grow-1">
                                     <h3>Empowering Independent Living</h3>
                                     <p>
-                                        Our approach goes beyond assistance by empowering seniors to maintain
+                                        Our approach goes beyond assistance by empowering elders to maintain
                                         independence while receiving professional care, emotional support and
                                         personalized attention every day.
                                     </p>
@@ -984,7 +984,7 @@
                     </div>
                 </div>
                 <p>
-                    Seniors experience a safe, elegant living environment with daily assistance,
+                    Elders experience a safe, elegant living environment with daily assistance,
                     companionship and professional care that preserves independence and dignity.
                 </p>
                 <div class="case-study-img">
@@ -1011,7 +1011,7 @@
                 </div>
                 <p>
                     Structured neurological, orthopaedic and oncology rehabilitation programs
-                    help seniors regain strength, mobility and confidence under expert supervision.
+                    help elders regain strength, mobility and confidence under expert supervision.
                 </p>
             </a>
             <a href="javascript:void(0);" class="case-study-single-item d-flex flex-wrap gap-20 justify-content-between align-items-center text-decoration-none">
@@ -1129,7 +1129,7 @@
                     <p>
                         Families trust Amritha Elder Care for its compassionate approach, clinical excellence
                         and dignified care. Our commitment to happy aging and personalized support creates
-                        lasting peace of mind for both seniors and their loved ones.
+                        lasting peace of mind for both elders and their loved ones.
                     </p>
 
                     
@@ -1742,7 +1742,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxFkfz9GuMYfKqKIa3rXyWF33ETGdcxQCNDRvAwcqhLR-eRfTU1e-8nqHcZGckaxvg/exec";
+const SCRIPT_URL = "https://script.google.com/macros/library/d/1sCGDu5gAG_3soUh04ETxCW7oX3F0SywD3EDmZMku_SgBMJp-MXJRYpQU/4";
 
 // Contact form
 document.getElementById("contactForm")?.addEventListener("submit", function (e) {
@@ -1762,27 +1762,22 @@ function submitForm(form, source) {
   formData.append("name", form.querySelector('[name="name"]')?.value || "");
   formData.append("email", form.querySelector('[name="email"]')?.value || "");
   formData.append("phone", form.querySelector('[name="phone"]')?.value || "");
-  formData.append("requirement", form.querySelector('[name="Requirement"]')?.value || "");
+  formData.append("Requirement", form.querySelector('[name="Requirement"]')?.value || "");
   formData.append("message", form.querySelector('[name="message"]')?.value || "");
   formData.append("source", source);
-
-  fetch(SCRIPT_URL, {
-    method: "POST",
-    body: formData
-  })
-  .then(res => res.text())
-  .then(text => {
-    if (text === "success") {
-      alert("Thank you! We will contact you shortly.");
-      form.reset();
-    } else {
-      alert("Submission failed. Please try again.");
-    }
-  })
-  .catch(err => {
-    console.error(err);
-    alert("Network error. Please try later.");
-  });
+fetch(SCRIPT_URL, {
+  method: "POST",
+  mode: "no-cors",
+  body: formData
+})
+.then(() => {
+  alert("Thank you! We will contact you shortly.");
+  form.reset();
+})
+.catch(() => {
+  alert("Unable to submit right now. Please try again later.");
+});
+  
 }
 </script>
     </body>
