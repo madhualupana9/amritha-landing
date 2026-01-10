@@ -236,11 +236,11 @@
                                 </a>
                             </li>
 
-                            <!-- <li class="nav-item dropdown">
+                            <li class="nav-item dropdown">
                                 <a class="nav-link" href="#about-us">
                                    About Us
                                 </a>
-                            </li> -->
+                            </li>
 
                             <li class="nav-item dropdown">
                                 <a class="nav-link" href="#services">
@@ -313,11 +313,11 @@
                                 </a>
                     </li>
 
-                    <!-- <li class="mobile-menu-list">
+                    <li class="mobile-menu-list">
                         <a class="nav-link" href="#about-us">
                                    About Us
                                 </a>
-                    </li> -->
+                    </li>
 
                     <li class="mobile-menu-list">
                        <a class="nav-link" href="#services">
@@ -823,6 +823,140 @@
 </div>
 <!-- End Fun Fact Area -->
 
+
+       <!-- Start About Us Area -->
+<div class="about-us-area pb-120" id="about-us">
+    <div class="container mw-1685">
+        <div class="row gy-2" data-cues="slideInUp" data-duration="900">
+            <div class="col-lg-4">
+                <span class="top-title">ABOUT AMRITHA</span>
+            </div>
+            <div class="col-lg-8">
+                <div class="mb-60">
+                    <h2 class="main-title ms-auto mw-975">
+                        Redefining Elder Care Through <span class="word-mark">Care</span>, Dignity and Purpose
+                    </h2>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-xl-4" data-cues="slideInUp" data-duration="900">
+                <div class="about-us-img">
+                    <img src="assets/images/about.webp" class="ukiyo" alt="about">
+                </div>
+            </div>
+
+            <div class="col-xl-8">
+                <div class="about-content" data-cues="slideInUp" data-duration="900">
+                    <p>
+                        Amritha Elder Care is a purpose-driven elder care and rehabilitation initiative founded by
+                        experienced professionals from healthcare and allied sectors. We are committed to creating
+                        a secure, elegant and emotionally uplifting environment where elders live with confidence,
+                        respect and a sense of belonging.
+                    </p>
+
+                    <div class="row g-4 align-items-end">
+                        <div class="col-lg-8">
+                            <div class="d-sm-flex align-items-center maintaining">
+                                <div class="flex-shrink-0 mb-3 mb-sm-0">
+                                    <div class="icon d-flex justify-content-center align-items-center">
+                                        <img src="assets/images/icon/about.png" alt="about">
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h3>Empowering Independent Living</h3>
+                                    <p>
+                                        Our approach goes beyond assistance by empowering elders to maintain
+                                        independence while receiving professional care, emotional support and
+                                        personalized attention every day.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <ul class="p-0 list-unstyled about-list">
+                                <li class="d-flex align-items-center gap-12">
+                                    <img src="assets/images/check.png" alt="check">
+                                    <span>Assisted and active Elder Care with dignity</span>
+                                </li>
+                                <li class="d-flex align-items-center gap-12">
+                                    <img src="assets/images/check.png" alt="check">
+                                    <span>Advanced neurological, orthopaedic and oncology rehabilitation</span>
+                                </li>
+                                <li class="d-flex align-items-center gap-12">
+                                    <img src="assets/images/check.png" alt="check">
+                                    <span>24×7 clinical care, wellness programs and emotional support</span>
+                                </li>
+                            </ul>
+
+                            <div class="about-btn d-flex flex-wrap align-items-center">
+                                <!-- <a href="javascript:void(0);" class="default-btn">
+                                    <div class="d-flex align-items-center gap-10">
+                                        <span>Discover Our Care</span>
+                                        <img src="assets/images/right-white.svg" alt="right-white">
+                                    </div>
+                                </a> -->
+                                <a href="mailto:srikara@amrithahappyaging.com" class="d-flex align-items-center mail-us text-decoration-none">
+                                    <div class="flex-shrink-0">
+                                        <i class="ti ti-mail-opened"></i>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <span class="d-block">Mail Us</span>
+                                        <span class="mail">srikara@amrithahappyaging.com</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="team-member text-center">
+                                <div class="d-flex align-items-center justify-content-center gap-30 mw-230">
+                                    <h2 class="mb-0"><span class="counter">40</span>+</h2>
+                                    <span>Dedicated Care Professionals</span>
+                                </div>
+                                <img src="assets/images/about2.webp" alt="about">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End About Us Area -->
+
+
+        <!-- Start Oldero Information Area -->
+<div class="oldero-information-area bg-img ptb-100" style="background-image: url(assets/images/information-bg.jpg);">
+    <div class="container mw-1685">
+        <div class="row align-items-center g-4" data-cues="slideInUp" data-duration="900">
+            <div class="col-lg-8">
+                <div class="d-flex flex-wrap align-items-center oldero-information-content">
+                    <div class="flex-shrink-0">
+                        <img src="assets/images/amritha-logo.png" alt="logo" style="width: 285px;">
+                    </div>
+                    <div class="flex-grow-1">
+                        <h3>Supporting Happy Aging Through Compassionate Elder Care</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="d-flex flex-wrap oldero-information-content justify-content-lg-end">
+                    <a href="tel:+919247518681" class="d-flex align-items-center text-decoration-none call">
+                        <i class="ti ti-headphones"></i>
+                        <span>+91 92475 18681</span>
+                    </a>
+                    <a href="#contact" class="default-btn active">
+                        <div class="d-flex align-items-center gap-10">
+                            <span>Schedule a Visit</span>
+                            <img src="assets/images/right.svg" alt="right">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Oldero Information Area -->
 
 
         <!-- Start Case Study Area -->
