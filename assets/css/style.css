@@ -12599,18 +12599,25 @@ button {
   transition: all ease 0.5s;
 }
 .default-btn:hover {
-  background-color: #F2B679;
-  color: #000000;
+  background-color: #990000;
+  color: #ffffff;
   border-color: #F2B679;
 }
 .default-btn:hover img {
   filter: brightness(0);
 }
-.default-btn.active {
+/* .default-btn.active {
   background-color: #F2B679;
   color: #000000;
   border-color: #F2B679;
+} */
+
+.default-btn.active {
+    background-color: #990000;
+    color: #fdfdfd;
+    border-color: #990000;
 }
+
 .default-btn.active:hover {
   background-color: #990000;
   color: #fff;
@@ -14478,9 +14485,9 @@ Page-navigation Area Style
   line-height: 56px;
   text-align: center;
   display: inline-block;
-  background-color: #F2B679;
+  background-color: #990000;
   border-radius: 50%;
-  color: #000000;
+  color: #ffffff;
   font-size: 25px;
   transition: all ease 0.5s;
 }
