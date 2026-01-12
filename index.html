@@ -169,6 +169,24 @@ h1, h2, h3, h4, h5, h6, .ft-heading-default {
 }
 
 
+.footer-social-icons a.social-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #990000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+.footer-social-icons a.social-btn:hover {
+    background: #7a0000;
+    transform: translateY(-4px);
+}
 
 </style>
 
@@ -1443,30 +1461,35 @@ h1, h2, h3, h4, h5, h6, .ft-heading-default {
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="footer-single-widget newsletter-form">
-                    <h3>Stay Connected</h3>
+               <div class="col-lg-3 col-sm-6">
+    <div class="footer-single-widget">
+        <h3>Follow Us</h3>
 
-                    <p>
-                        Subscribe to receive updates on Elder wellness, care insights and
-                        community stories from Amritha Elder Care.
-                    </p>
+        <p>
+            Stay connected with Amritha Elder Care for wellness tips, community stories, and
+            elder care updates.
+        </p>
 
-                    <form class="position-relative z-1 mb-3">
-                        <input type="email" class="form-control" placeholder="Enter Your Email">
-                        <button type="submit" class="submit-btn position-absolute top-50 end-0 translate-middle-y">
-                            <img src="assets/images/icon-send.svg" alt="icon-send">
-                        </button>
-                    </form>
-                    
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="checkDefault">
-                        <label class="form-check-label" for="checkDefault">
-                            I agree to the <a href="javascript:void(0);">Terms & Conditions</a>
-                        </label>
-                    </div>
-                </div>
-            </div>
+        <div class="footer-social-icons d-flex gap-15 mt-4">
+            <a href="https://www.facebook.com/" target="_blank" class="social-btn facebook">
+                <i class="ti ti-brand-facebook"></i>
+            </a>
+
+            <a href="https://www.instagram.com/" target="_blank" class="social-btn instagram">
+                <i class="ti ti-brand-instagram"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/" target="_blank" class="social-btn linkedin">
+                <i class="ti ti-brand-linkedin"></i>
+            </a>
+
+            <a href="https://www.youtube.com/" target="_blank" class="social-btn youtube">
+                <i class="ti ti-brand-youtube"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
         </div>
     </div>
 </div>
@@ -1480,7 +1503,7 @@ h1, h2, h3, h4, h5, h6, .ft-heading-default {
             <p class="mb-0">
                 © <span>Amritha Elder Care.</span> All Rights Reserved.
             </p>
-            <ul class="p-0 m-0 list-unstyled d-flex align-items-center social-link">
+            <!-- <ul class="p-0 m-0 list-unstyled d-flex align-items-center social-link">
                 <li>
                     <a href="https://www.facebook.com/" target="_blank">
                         <i class="ti ti-brand-facebook-filled"></i>
@@ -1496,7 +1519,7 @@ h1, h2, h3, h4, h5, h6, .ft-heading-default {
                         <i class="ti ti-brand-instagram"></i>
                     </a>
                 </li>
-            </ul>
+            </ul> -->
             <div class="d-flex flex-wrap gap-5 policy">
                 <a href="javascript:void(0);" class="text-decoration-none">Privacy Policy</a>
                 <a href="javascript:void(0);" class="text-decoration-none">Terms & Conditions</a>
