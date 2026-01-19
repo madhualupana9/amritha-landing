@@ -12371,7 +12371,7 @@ textarea.form-control {
 
 .ptb-120 {
   padding-top: 30px;
-  /* padding-bottom: 30px; */
+  padding-bottom: 15px;
 }
 
 .pt-120 {
@@ -15633,7 +15633,7 @@ Page-navigation Area Style
   margin-bottom: 25px;
 }
 .fun-fact-single-item h2, .fun-fact-single-item .h2 {
-  font-size: 60px;
+  font-size: 50px;
   line-height: 116.667%;
   margin-bottom: 10px;
 }
