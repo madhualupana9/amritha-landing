@@ -12819,7 +12819,7 @@ Main Content Text Style
 }
 
 .main-title {
-  font-size: 46px;
+  font-size: 40px;
   line-height: 121.739%;
   color: #000000;
   max-width: 860px;
@@ -14467,7 +14467,7 @@ Page-navigation Area Style
 }
 .banner-content h1, .banner-content .h1 {
   color: #000000;
-  font-size: 80px;
+  font-size: 70px;
   font-weight: 400;
   line-height: 112.5%;
   margin-bottom: 25px;
@@ -15077,7 +15077,7 @@ Page-navigation Area Style
 ============================================*/
 .work-content {
   border-radius: 20px 200px 20px 20px;
-  background-color: #D9ECFF;
+  background-color: #f5f5f5;
   padding: 50px 40px;
 }
 .work-content h3, .work-content .h3 {
