@@ -15,7 +15,7 @@
 
     <meta name="author" content="Amritha Advanced Rehabilitation & Elder Care">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.amrithahappyaging.com/">
+    <link rel="canonical" href="https://landing.amrithahappyaging.com/">
 
     <!-- Open Graph (Facebook / LinkedIn) -->
     <meta property="og:type" content="website">
@@ -245,11 +245,11 @@ h1, h2, h3, h4, h5, h6, .ft-heading-default {
 </head>
     <body>
         <!-- Start Preloader -->
-        <div id="preloader">
-            <div class="preloader">
-                <img src="assets/images/preloader.gif" alt="preloader">
-            </div>
-        </div>
+        <!--<div id="preloader">-->
+        <!--    <div class="preloader">-->
+        <!--        <img src="assets/images/preloader.gif" alt="preloader">-->
+        <!--    </div>-->
+        <!--</div>-->
         <!-- End Preloader -->
         
         <div class="fixed-top">
@@ -530,7 +530,7 @@ h1, h2, h3, h4, h5, h6, .ft-heading-default {
             <div class="col-xl-6">
                 <div class="banner-img" data-group="images" data-cues="slideInUp" data-duration="900">
                     <!-- <span class="border-text">Elder Care</span> -->
-                    <img src="assets/images/banner-img.png" alt="banner-img">
+                    <img src="assets/images/banner-img.webp" alt="banner-img">
 
                     
                 </div>
@@ -1496,7 +1496,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwbjX1rKeSXV1A5r8LbHQZ8egSL2NVyiGgDXJEja6yKylzaxSz5cNkKcyadOjbgw7kZ/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzjFg8FlbTEeotdD7SP6AlU2T4_gSf2zVlKUekRtraTPrhdQb-biOOy2EEqufIlC8Ys/exec";
 
 // Contact form
 document.getElementById("contactForm")?.addEventListener("submit", function (e) {
@@ -1511,28 +1511,30 @@ document.getElementById("floatingForm")?.addEventListener("submit", function (e)
 });
 
 function submitForm(form, source) {
-  const formData = new FormData();
-
-  formData.append("name", form.querySelector('[name="name"]')?.value || "");
-  formData.append("email", form.querySelector('[name="email"]')?.value || "");
-  formData.append("phone", form.querySelector('[name="phone"]')?.value || "");
-  formData.append("requires", form.querySelector('[name="requires"]')?.value || "");
-  formData.append("message", form.querySelector('[name="message"]')?.value || "");
+  const formData = new FormData(form);
   formData.append("source", source);
-fetch(SCRIPT_URL, {
-  method: "POST",
-  mode: "no-cors",
-  body: formData
-})
-.then(() => {
-  alert("Thank you! We will contact you shortly.");
-  form.reset();
-})
-.catch(() => {
-  alert("Unable to submit right now. Please try again later.");
-});
-  
+
+  fetch(SCRIPT_URL, {
+    method: "POST",
+    body: formData
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.status === "success") {
+      alert("Thank you! We will contact you shortly.");
+      form.reset();
+    } else {
+      alert("Server error: " + data.message);
+    }
+  })
+  .catch(err => {
+    console.error(err);
+    alert("Submission failed. Please try again.");
+  });
 }
+
+
+
 </script>
     </body>
 </html>
