@@ -239,7 +239,47 @@ h1, h2, h3, h4, h5, h6, .ft-heading-default {
     padding-top: 0;   /* IMPORTANT */
 }
 
+/* Button loading state */
+.default-btn[disabled] {
+    opacity: 0.8;
+    cursor: not-allowed;
+}
 
+/* Loader */
+.btn-loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 600;
+}
+
+.btn-loader2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 600;
+}
+
+/* Spinner animation */
+.spinner {
+    width: 18px;
+    height: 18px;
+    border: 3px solid rgba(255,255,255,0.4);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Utility */
+.d-none {
+    display: none !important;
+}
 </style>
 
 </head>
@@ -1182,12 +1222,18 @@ h1, h2, h3, h4, h5, h6, .ft-heading-default {
                             <textarea rows="7" name="message" class="form-control" placeholder="Tell us about your care needs or questions"></textarea>
                         </div>
                         <div class="col-lg-12">
-                            <button type="submit" class="default-btn w-100">
-                                <span class="d-flex gap-10 align-items-center justify-content-center">
-                                    <span>Request a Consultation</span>
-                                    <img src="assets/images/right-white.svg" alt="right-white">
+                            <button type="submit" class="default-btn w-100" id="consultSubmitBtn">
+                                <span class="btn-text d-flex align-items-center justify-content-center gap-10">
+                                    <span>Request A Consultation</span>
+                                    <img src="assets/images/right-white.svg" alt="">
+                                </span>
+
+                                <span class="btn-loader2 d-none">
+                                    <span class="spinner"></span>
+                                    Your request is processing...
                                 </span>
                             </button>
+
                         </div>
                     </div>
                     </form>
@@ -1406,12 +1452,17 @@ h1, h2, h3, h4, h5, h6, .ft-heading-default {
                 <option>General Enquiry</option>
             </select>
 
-            <button type="submit" class="default-btn w-100">
-                <span class="d-flex gap-10 align-items-center justify-content-center">
-                    <span>Request Call Back</span>
-                    <img src="assets/images/right-white.svg" alt="" >
-                </span>
-            </button>
+            <button type="submit" class="default-btn w-100" id="submitBtn">
+    <span class="btn-text d-flex gap-10 align-items-center justify-content-center">
+        <span>Request Call Back</span>
+        <img src="assets/images/right-white.svg" alt="">
+    </span>
+
+    <span class="btn-loader d-none">
+        <span class="spinner"></span>
+        Processing...
+    </span>
+</button>
         </form>
     </div>
 </div>
@@ -1496,45 +1547,80 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzjFg8FlbTEeotdD7SP6AlU2T4_gSf2zVlKUekRtraTPrhdQb-biOOy2EEqufIlC8Ys/exec";
+</script>
 
-// Contact form
-document.getElementById("contactForm")?.addEventListener("submit", function (e) {
-  e.preventDefault();
-  submitForm(this, "Website Contact Form");
+<script>
+    
+document.getElementById('floatingForm')?.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzjFg8FlbTEeotdD7SP6AlU2T4_gSf2zVlKUekRtraTPrhdQb-biOOy2EEqufIlC8Ys/exec";
+    const submitBtn = document.getElementById('submitBtn');
+    const btnText = submitBtn.querySelector('.btn-text');
+    const btnLoader = submitBtn.querySelector('.btn-loader');
+
+    // Disable button & show loader
+    submitBtn.disabled = true;
+    btnText.classList.add('d-none');
+    btnLoader.classList.remove('d-none');
+
+    const formData = new FormData(this);
+
+    // 🔁 Replace SCRIPT_URL with your actual backend / Google Apps Script URL
+    fetch(SCRIPT_URL, {
+        method: 'POST',
+        body: formData
+    })
+    .then(res => res.text())
+    .then(() => {
+        this.reset();
+        window.location.href = "thankyou.html";
+    })
+    .catch(() => {
+        alert('Something went wrong. Please try again.');
+    })
+    .finally(() => {
+        // Reset button state
+        submitBtn.disabled = false;
+        btnText.classList.remove('d-none');
+        btnLoader.classList.add('d-none');
+    });
 });
 
-// Floating form
-document.getElementById("floatingForm")?.addEventListener("submit", function (e) {
-  e.preventDefault();
-  submitForm(this, "Floating Call Request");
+
+document.getElementById('contactForm')?.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzjFg8FlbTEeotdD7SP6AlU2T4_gSf2zVlKUekRtraTPrhdQb-biOOy2EEqufIlC8Ys/exec";
+    const submitBtn = document.getElementById('consultSubmitBtn');
+    const btnText = submitBtn.querySelector('.btn-text');
+    const btnLoader = submitBtn.querySelector('.btn-loader2');
+
+    // Disable button & show loader
+    submitBtn.disabled = true;
+    btnText.classList.add('d-none');
+    btnLoader.classList.remove('d-none');
+
+    const formData = new FormData(this);
+
+    // 🔁 Replace SCRIPT_URL with your actual backend / Google Apps Script URL
+    fetch(SCRIPT_URL, {
+        method: 'POST',
+        body: formData
+    })
+    .then(res => res.text())
+    .then(() => {
+        this.reset();
+        window.location.href = "thankyou.html";
+    })
+    .catch(() => {
+        alert('Something went wrong. Please try again.');
+    })
+    .finally(() => {
+        // Reset button state
+        submitBtn.disabled = false;
+        btnText.classList.remove('d-none');
+        btnLoader.classList.add('d-none');
+    });
 });
-
-function submitForm(form, source) {
-  const formData = new FormData(form);
-  formData.append("source", source);
-
-  fetch(SCRIPT_URL, {
-    method: "POST",
-    body: formData
-  })
-  .then(res => res.json())
-  .then(data => {
-    if (data.status === "success") {
-      alert("Thank you! We will contact you shortly.");
-      form.reset();
-    } else {
-      alert("Server error: " + data.message);
-    }
-  })
-  .catch(err => {
-    console.error(err);
-    alert("Submission failed. Please try again.");
-  });
-}
-
-
-
 </script>
     </body>
 </html>
