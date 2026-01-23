@@ -195,7 +195,7 @@ h1, h2, h3, h4, h5, h6, .ft-heading-default {
     padding: 18px 30px;
     border-radius: 0 0 20px 20px;
     margin-top: -85px; /* stronger overlap */
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     position: relative;
     z-index: 10;
 }
@@ -235,7 +235,8 @@ h1, h2, h3, h4, h5, h6, .ft-heading-default {
 .footer-area {
     background-color: #1C2539;
     position: relative;
-    overflow: visible; /* REQUIRED for logo overlap */
+    overflow: visible;
+    padding-top: 0;   /* IMPORTANT */
 }
 
 
@@ -598,7 +599,7 @@ h1, h2, h3, h4, h5, h6, .ft-heading-default {
                                         </div>
                                     </div>
                                     <div class="flex-grow-1">
-                                        <h3>Assisted Living Care</h3>
+                                        <h3>Assisted Elder Care</h3>
                                     </div>
                                 </div>
                                 <p class="text_limit">
@@ -678,7 +679,7 @@ h1, h2, h3, h4, h5, h6, .ft-heading-default {
                     </div>
                 </a>
 
-                <a href="javascript:void(0);" class="d-flex align-items-center services-single-item text-decoration-none">
+                <!-- <a href="javascript:void(0);" class="d-flex align-items-center services-single-item text-decoration-none">
                     <div class="flex-shrink-0">
                         <div class="icon rounded-circle d-flex justify-content-center align-items-center">
                             <img src="assets/images/icon/service3.png" alt="service">
@@ -687,7 +688,7 @@ h1, h2, h3, h4, h5, h6, .ft-heading-default {
                     <div class="flex-grow-1">
                         <h3>Medical Rehabilitation Programs</h3>
                     </div>
-                </a>
+                </a> -->
 
                 <a href="javascript:void(0);" class="d-flex align-items-center services-single-item text-decoration-none">
                     <div class="flex-shrink-0">
@@ -712,7 +713,7 @@ h1, h2, h3, h4, h5, h6, .ft-heading-default {
                         <div class="services-content">
                             <h3>Personalized Care That Nurtures Body, Mind and Spirit</h3>
                             <p>
-                                At Amritha, our services are thoughtfully designed to support elders through advanced rehabilitation, assisted living and active community life, ensuring comfort, safety and emotional well-being at every stage.
+                                At Amritha, our services are thoughtfully designed to individuals elders through advanced rehabilitation, assisted living and active community life, ensuring comfort, safety and emotional well-being at every stage.
                             </p>
 
                             <ul class="p-0 list-unstyled services-list">
@@ -993,13 +994,13 @@ h1, h2, h3, h4, h5, h6, .ft-heading-default {
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                                What is Amritha Advanced Rehab & Elder Living?
+                                What is Amritha Advanced Rehab & Elder Care?
                             </button>
                         </h2>
                         <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <p>
-                                    Amritha is a premium Advanced Rehabilitation & Elder living center providing therapy and assisted living under one roof with a focus on recovery, dignity and quality of life.
+                                    Amritha is a premium Advanced Rehabilitation & Elder Care center providing therapy and assisted living under one roof with a focus on recovery, dignity and quality of life.
                                 </p>
                             </div>
                         </div>
@@ -1014,7 +1015,7 @@ h1, h2, h3, h4, h5, h6, .ft-heading-default {
                         <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <p>
-                                    Our services are ideal for post-hospitalization patients, stroke survivors, elders, post-surgery patients and individuals requiring neurological, orthopaedic or long-term assisted care.
+                                    Our services are ideal for post-hospitalization patients, stroke survivors, elders, post-surgery patients and individuals requiring neurological, orthopaedic or long-term Elder Care.
                                 </p>
                             </div>
                         </div>
@@ -1029,7 +1030,7 @@ h1, h2, h3, h4, h5, h6, .ft-heading-default {
                         <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <p>
-                                    We provide stroke rehabilitation, orthopaedic rehab, neurological rehab, post-surgical recovery, geriatric rehabilitation, pain management and mobility training.
+                                    We provide stroke rehabilitation, orthopaedic rehab, neurological rehab, post-surgical recovery, geriatric rehabilitation, pain management, balance training and mobility training.
                                 </p>
                             </div>
                         </div>
@@ -1169,7 +1170,7 @@ h1, h2, h3, h4, h5, h6, .ft-heading-default {
                             <input type="number" class="form-control" name="phone" placeholder="Contact Number">
                         </div>
                         <div class="col-lg-6">
-                            <select class="form-control mb-3" name="Requirement">
+                            <select class="form-control mb-3" name="requires">
                             <option value="">Care Requirement</option>
                             <option>Assisted Living</option>
                             <option>Rehabilitation Care</option>
@@ -1397,7 +1398,7 @@ h1, h2, h3, h4, h5, h6, .ft-heading-default {
         <form id="floatingForm">
             <input type="text" name="name" class="form-control mb-3" placeholder="Your Name">
             <input type="tel" name="phone" class="form-control mb-3" placeholder="Phone Number">
-            <select class="form-control mb-3" name="message">
+            <select class="form-control mb-3" name="requires">
                 <option value="">Care Requirement</option>
                 <option>Assisted Living</option>
                 <option>Rehabilitation Care</option>
@@ -1495,7 +1496,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-const SCRIPT_URL = "https://script.google.com/macros/library/d/1sCGDu5gAG_3soUh04ETxCW7oX3F0SywD3EDmZMku_SgBMJp-MXJRYpQU/4";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwbjX1rKeSXV1A5r8LbHQZ8egSL2NVyiGgDXJEja6yKylzaxSz5cNkKcyadOjbgw7kZ/exec";
 
 // Contact form
 document.getElementById("contactForm")?.addEventListener("submit", function (e) {
@@ -1515,7 +1516,7 @@ function submitForm(form, source) {
   formData.append("name", form.querySelector('[name="name"]')?.value || "");
   formData.append("email", form.querySelector('[name="email"]')?.value || "");
   formData.append("phone", form.querySelector('[name="phone"]')?.value || "");
-  formData.append("Requirement", form.querySelector('[name="Requirement"]')?.value || "");
+  formData.append("requires", form.querySelector('[name="requires"]')?.value || "");
   formData.append("message", form.querySelector('[name="message"]')?.value || "");
   formData.append("source", source);
 fetch(SCRIPT_URL, {
