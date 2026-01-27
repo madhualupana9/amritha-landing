@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="zxx">
    <head>
+       <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PCVQ4KRW');</script>
+<!-- End Google Tag Manager -->
     <!-- Basic Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -194,7 +201,7 @@ h1, h2, h3, h4, h5, h6, .ft-heading-default {
     align-items: center;
     padding: 18px 30px;
     border-radius: 0 0 20px 20px;
-    margin-top: -85px; /* stronger overlap */
+    margin-top: -24px; /* stronger overlap */
     margin-bottom: 16px;
     position: relative;
     z-index: 10;
@@ -280,10 +287,64 @@ h1, h2, h3, h4, h5, h6, .ft-heading-default {
 /*.d-none {*/
 /*    display: none !important;*/
 /*}*/
+
+/* Header top bar */
+.header-area {
+    background-color: #1c2539; /* blue ribbon */
+    color: #ffffff;
+    font-size: 14px;
+}
+
+/* Icons */
+.header-area i {
+    color: #ffffff;
+    font-size: 17px;
+}
+
+/* Phone numbers */
+.header-phone a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.header-phone a:hover {
+    color: #ffd6d6;
+}
+
+/* Spacing */
+.header-info li {
+    margin-right: 22px;
+}
+
+/* Social icons */
+.social-link a {
+    color: #ffffff;
+    font-size: 18px;
+    margin-left: 14px;
+    transition: 0.3s ease;
+}
+
+.social-link a:hover {
+    color: #ffcccc;
+}
+
+/* Mobile handling */
+@media (max-width: 768px) {
+    .header-phone {
+        display: none; /* optional: hide on mobile */
+    }
+}
+
 </style>
 
 </head>
     <body>
+        <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PCVQ4KRW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
         <!-- Start Preloader -->
         <!--<div id="preloader">-->
         <!--    <div class="preloader">-->
@@ -294,40 +355,59 @@ h1, h2, h3, h4, h5, h6, .ft-heading-default {
         
         <div class="fixed-top">
             <!-- Start Header Area -->
-            <div class="header-area bg-eef2da">
-                <div class="container mw-1685">
-                    <div class="row align-items-center gy-2">
-                        <div class="col-lg-8 d-none d-sm-inline-block">
-                            <ul class="d-flex flex-wrap justify-content-center justify-content-lg-start flex-md-nowrap align-items-center p-0 m-0 list-unstyled header-info">
-                                <li class="d-flex align-items-center gap-10">
-                                    <i class="ti ti-map-pin"></i>
-                                    <span>Location: Gachibowli, Hyderabad </span>
-                                </li>
-                                <li class="d-flex align-items-center gap-10">
-                                    <i class="ti ti-clock-hour-4"></i>
-                                    <span>Working Hours: 24/7</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="d-flex link-social-wrap align-items-center justify-content-center justify-content-lg-end">
-                                
-                                <div class="social-link d-flex align-items-center">
-                                    <a href="https://www.facebook.com/" target="_blank">
-                                        <i class="ti ti-brand-facebook"></i>
-                                    </a>
-                                    <a href="https://www.twitter.com/" target="_blank">
-                                        <i class="ti ti-brand-x"></i>
-                                    </a>
-                                    <a href="https://www.instagram.com/" target="_blank">
-                                        <i class="ti ti-brand-instagram"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+            <!-- Start Header Area -->
+<div class="header-area bg-eef2da">
+    <div class="container mw-1685">
+        <div class="row align-items-center gy-2">
+            
+            <!-- Left Side Info -->
+            <div class="col-lg-8 d-none d-sm-inline-block">
+                <ul class="d-flex flex-wrap justify-content-center justify-content-lg-start flex-md-nowrap align-items-center p-0 m-0 list-unstyled header-info">
+
+                    <li class="d-flex align-items-center gap-10">
+                        <i class="ti ti-map-pin"></i>
+                        <span>Location: Gachibowli, Hyderabad</span>
+                    </li>
+
+                    <li class="d-flex align-items-center gap-10">
+                        <i class="ti ti-clock-hour-4"></i>
+                        <span>Working Hours: 24/7</span>
+                    </li>
+
+                    <!-- Phone Numbers -->
+                    <li class="d-flex align-items-center gap-10 header-phone">
+                        <i class="ti ti-phone-call"></i>
+                        <span>
+                            <a href="tel:+919247518680">+91 9247518680</a> |
+                            <a href="tel:+919247518681">9247518681</a>
+                        </span>
+                    </li>
+
+                </ul>
+            </div>
+
+            <!-- Right Side Social Icons -->
+            <div class="col-lg-4">
+                <div class="d-flex link-social-wrap align-items-center justify-content-center justify-content-lg-end">
+                    <div class="social-link d-flex align-items-center">
+                        <a href="https://www.facebook.com/" target="_blank">
+                            <i class="ti ti-brand-facebook"></i>
+                        </a>
+                        <a href="https://www.twitter.com/" target="_blank">
+                            <i class="ti ti-brand-x"></i>
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank">
+                            <i class="ti ti-brand-instagram"></i>
+                        </a>
                     </div>
                 </div>
             </div>
+
+        </div>
+    </div>
+</div>
+<!-- End Header Area -->
+
             <!-- End Header Area -->
 
             <!-- Start Navbar Area --> 
@@ -466,7 +546,7 @@ h1, h2, h3, h4, h5, h6, .ft-heading-default {
                         </div>
                         <div class="flex-grow-1">
                             <h4>Phone:</h4>
-                            <a href="tel:+919247518681">+91 92475 18681 / 80</a>
+                            <a href="tel:+919247518681">+91 9247518681 | 9247518681</a>
                         </div>
                     </div>
                 </li>
@@ -545,7 +625,7 @@ h1, h2, h3, h4, h5, h6, .ft-heading-default {
             <div class="col-xl-6">
                 <div class="banner-content" data-group="images" data-cues="slideInUp" data-duration="900">
                     <span class="top-title">Welcome to Amritha Advanced Rehabilitation & Elder Care</span>
-                    <h1 style="color: #990000 !important;">Giving What They Need Most, Right When It Matters</h1>
+                    <h1 style="color: #990000 !important;">Timely, compassionate care that families can trust when it matters most.</h1>
                     <p>
                         Amritha provides advanced rehabilitation and elder care in a safe, compassionate and professionally managed environment, supporting recovery, comfort and dignified living at every stage of aging.
                     </p>
@@ -553,15 +633,15 @@ h1, h2, h3, h4, h5, h6, .ft-heading-default {
                     <div class="d-flex align-items-center flex-wrap banner-btn">
                         <a href="#contact" class="default-btn">
                             <div class="d-flex gap-10 align-content-center">
-                                <span>Book a Visit</span>
+                                <span>Let’s talk about your recovery</span>
                                 <img src="assets/images/right-white.svg" alt="right-white">
                             </div>
                         </a>
-                        <a href="tel:+919247518681" class="d-flex align-items-center gap-20 call-us">
+                        <a  class="d-flex align-items-center gap-20 call-us">
                             <i class="ti ti-phone-call"></i>
                             <div>
                                 <span class="d-block">Talk to Our Care Team</span>
-                                <span class="d-block number">+91 92475 18681 / 80</span>
+                                <span class="d-block number"><a href="tel:+919247518680" style="text-decoration: none;">+91 9247518680</a> | <a href="tel:+919247518681" style="text-decoration: none;">+91 9247518681</a></span>
                             </div>
                         </a>
                     </div>
@@ -586,207 +666,152 @@ h1, h2, h3, h4, h5, h6, .ft-heading-default {
     <div class="container mw-1685">
         <div class="row gy-2" data-cues="slideInUp" data-duration="900">
             <div class="col-lg-4">
-                <span class="top-title">How We Work</span>
+                <span class="top-title">Our Services</span>
             </div>
             <div class="col-lg-8">
                 <h2 class="main-title mb-70 ms-auto mw-975" style="color: #990000 !important;">
-                    Reimagining Rehabilitation & Elder Care With Compassion
+                    Specialized Rehabilitation & Elder Care Services
                 </h2>
-                <div class=""></div>
             </div>
         </div>
+
         <div class="row g-4">
+            <!-- Left Content -->
             <div class="col-lg-4">
                 <div class="work-content" data-cues="slideInUp" data-duration="900">
                     <h3 style="color: #990000 !important;">
-                        We create secure, elegant and emotionally uplifting environments where elders feel respected,
-                        valued and empowered to live with confidence.
+                        Comprehensive medical rehabilitation and elder care services designed to restore dignity,
+                        independence and quality of life.
                     </h3>
 
                     <div class="text-center">
-                        <img src="assets/images/work33.webp" alt="work" style="height: 300px;">
+                        <img src="assets/images/work33.webp" alt="services" style="height: 300px;">
                     </div>
                 </div>
             </div>
+
+            <!-- Right Services List -->
             <div class="col-lg-8">
                 <div class="work-content-wrap">
                     <div class="row g-0" data-cues="slideInUp" data-duration="900">
 
+                        <!-- Neurological Rehabilitation -->
                         <div class="col-md-6">
                             <div class="work-single-item">
-                                <div class="d-flex align-items-center mb-30">
-                                    <div class="flex-shrink-0">
-                                        <div class="icon d-flex justify-content-center align-items-center">
-                                            <img src="assets/images/icon/work4.png" alt="work">
-                                        </div>
-                                    </div>
-                                    <div class="flex-grow-1">
-                                        <h3>Rehabilitation Support</h3>
-                                    </div>
-                                </div>
+                                <h3>Neurological Rehabilitation</h3>
                                 <p class="text_limit">
-                                    Trained doctors, nurses and therapists deliver clinic-level care and advanced rehabilitation to restore strength, mobility and confidence.
+                                    Specialized therapy for brain and nervous system conditions to improve mobility,
+                                    cognition and daily functioning.
                                 </p>
                             </div>
                         </div>
 
+                        <!-- Orthopaedic Rehabilitation -->
                         <div class="col-md-6">
                             <div class="work-single-item">
-                                <div class="d-flex align-items-center mb-30">
-                                    <div class="flex-shrink-0">
-                                        <div class="icon d-flex justify-content-center align-items-center">
-                                            <img src="assets/images/icon/work1.png" alt="work">
-                                        </div>
-                                    </div>
-                                    <div class="flex-grow-1">
-                                        <h3>Assisted Elder Care</h3>
-                                    </div>
-                                </div>
+                                <h3>Orthopaedic Rehabilitation</h3>
                                 <p class="text_limit">
-                                    A dignified living solution offering daily support, safety and companionship in a professionally managed environment that feels like home.
+                                    Recovery-focused rehabilitation for fractures, joint replacements, spine conditions
+                                    and musculoskeletal disorders.
                                 </p>
                             </div>
                         </div>
+
+                        <!-- Oncology Rehabilitation -->
                         <div class="col-md-6">
                             <div class="work-single-item">
-                                <div class="d-flex align-items-center mb-30">
-                                    <div class="flex-shrink-0">
-                                        <div class="icon d-flex justify-content-center align-items-center">
-                                            <img src="assets/images/icon/work2.png" alt="work">
-                                        </div>
-                                    </div>
-                                    <div class="flex-grow-1">
-                                        <h3>Personalized Care Plans</h3>
-                                    </div>
-                                </div>
+                                <h3>Oncology Rehabilitation</h3>
                                 <p class="text_limit">
-                                    Every resident receives a thoughtfully customized care plan based on their medical, physical, emotional and lifestyle needs.
+                                    Supportive rehabilitation to manage cancer-related fatigue, pain and mobility
+                                    challenges during and after treatment.
                                 </p>
                             </div>
                         </div>
+
+                        <!-- Stroke Rehabilitation -->
                         <div class="col-md-6">
                             <div class="work-single-item">
-                                <div class="d-flex align-items-center mb-30">
-                                    <div class="flex-shrink-0">
-                                        <div class="icon d-flex justify-content-center align-items-center">
-                                            <img src="assets/images/icon/work3.png" alt="work">
-                                        </div>
-                                    </div>
-                                    <div class="flex-grow-1">
-                                        <h3>Holistic Well-Being</h3>
-                                    </div>
-                                </div>
+                                <h3>Stroke Rehabilitation</h3>
                                 <p class="text_limit">
-                                    We nurture physical, emotional and mental well-being through wellness programs, nutrition, social engagement and compassionate support.
+                                    Comprehensive stroke recovery programs focusing on speech, movement, balance and
+                                    independence.
                                 </p>
                             </div>
                         </div>
+
+                        <!-- Paralysis Care -->
+                        <div class="col-md-6">
+                            <div class="work-single-item">
+                                <h3>Paralysis Care</h3>
+                                <p class="text_limit">
+                                    Long-term care and rehabilitation support for partial or complete paralysis with
+                                    focus on mobility and daily assistance.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Dementia Care -->
+                        <div class="col-md-6">
+                            <div class="work-single-item">
+                                <h3>Dementia Care</h3>
+                                <p class="text_limit">
+                                    Structured and compassionate care programs designed to ensure safety, routine and
+                                    emotional well-being.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Alzheimer’s Care -->
+                        <div class="col-md-6">
+                            <div class="work-single-item">
+                                <h3>Alzheimer’s Care</h3>
+                                <p class="text_limit">
+                                    Specialized memory care with cognitive stimulation, supervision and personalized
+                                    daily support.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Parkinson’s Care -->
+                        <div class="col-md-6">
+                            <div class="work-single-item">
+                                <h3>Parkinson’s Care</h3>
+                                <p class="text_limit">
+                                    Targeted therapy and assisted living support to manage movement, balance and
+                                    lifestyle challenges.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Parkinson’s Care -->
+                        <div class="col-md-6">
+                            <div class="work-single-item">
+                                <h3>Palliative Care</h3>
+                                <p class="text_limit">
+                                    Compassionate comfort-focused care addressing pain management, emotional support
+                                    and quality of life for patients and families.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Parkinson’s Care -->
+                        <div class="col-md-6">
+                            <div class="work-single-item">
+                                
+                            </div>
+                        </div>
+
                         
+
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
 <!-- End Work Area -->
 
-
-       <!-- Start Services Area -->
-<div class="services-area bg-img ptb-120" id="services" style="background-color: #f5f5f5 !important;">
-    <div class="container mw-1685">
-        <div class="row gy-2 mb-80" data-cues="slideInUp" data-duration="900">
-            <div class="col-lg-4">
-                <span class="top-title">Our Services</span>
-            </div>
-            <div class="col-lg-8">
-                <h2 class="main-title mb-70 ms-auto mw-975" style="color: #990000 !important;">
-                    Everything We Do Begins With Responsibility
-                </h2>
-            </div>
-        </div>
-
-        <div class="row g-4">
-            <div class="col-xl-4" data-cues="slideInUp" data-duration="900">
-
-                <a href="javascript:void(0);" class="d-flex align-items-center services-single-item text-decoration-none">
-                    <div class="flex-shrink-0">
-                        <div class="icon rounded-circle d-flex justify-content-center align-items-center">
-                            <img src="assets/images/icon/service2.png" alt="service">
-                        </div>
-                    </div>
-                    <div class="flex-grow-1">
-                        <h3>Rehabilitation & Elder Care</h3>
-                    </div>
-                </a>
-
-                <!-- <a href="javascript:void(0);" class="d-flex align-items-center services-single-item text-decoration-none">
-                    <div class="flex-shrink-0">
-                        <div class="icon rounded-circle d-flex justify-content-center align-items-center">
-                            <img src="assets/images/icon/service3.png" alt="service">
-                        </div>
-                    </div>
-                    <div class="flex-grow-1">
-                        <h3>Medical Rehabilitation Programs</h3>
-                    </div>
-                </a> -->
-
-                <a href="javascript:void(0);" class="d-flex align-items-center services-single-item text-decoration-none">
-                    <div class="flex-shrink-0">
-                        <div class="icon rounded-circle d-flex justify-content-center align-items-center">
-                            <img src="assets/images/icon/service1.png" alt="service">
-                        </div>
-                    </div>
-                    <div class="flex-grow-1">
-                        <h3>Assisted Living</h3>
-                    </div>
-                </a>
-                
-            </div>
-            <div class="col-xl-8">
-                <div class="row align-items-center align-items-xxl-center g-4" data-cues="slideInUp" data-duration="900">
-                    <div class="col-lg-7">
-                        <div class="services-img h-100">
-                            <img src="assets/images/service-img.webp" class="h-100 ukiyo" alt="service-img">
-                        </div>
-                    </div>
-                    <div class="col-lg-5">
-                        <div class="services-content">
-                            <h3>Personalized Care That Nurtures Body, Mind and Spirit</h3>
-                            <p>
-                                At Amritha, our services are thoughtfully designed to individuals elders through advanced rehabilitation, assisted living and active community life, ensuring comfort, safety and emotional well-being at every stage.
-                            </p>
-
-                            <ul class="p-0 list-unstyled services-list">
-                                <li class="d-flex gap-12 align-items-center">
-                                    <img src="assets/images/check.png" alt="check">
-                                    <span class="text-secondary">Neurological, orthopaedic & oncology rehabilitation</span>
-                                </li>
-
-                                <li class="d-flex gap-12 align-items-center">
-                                    <img src="assets/images/check.png" alt="check">
-                                    <span class="text-secondary">Assisted living with 24×7 nursing support</span>
-                                </li>
-                                
-                                <li class="d-flex gap-12 align-items-center">
-                                    <img src="assets/images/check.png" alt="check">
-                                    <span class="text-secondary">Wellness programs, nutrition & social engagement</span>
-                                </li>
-                            </ul>
-
-                            <!-- <a href="javascript:void(0);" class="default-btn">
-                                <div class="d-flex align-items-center gap-10">
-                                    <span>Explore our services</span>
-                                    <img src="assets/images/right-white.svg" alt="right-white">
-                                </div>
-                            </a> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Services Area -->
 
 
        <!-- Start Fun Fact Area -->
@@ -1298,7 +1323,7 @@ h1, h2, h3, h4, h5, h6, .ft-heading-default {
                             </div>
                             <div class="flex-grow-1">
                                 <h6>Phone</h6>
-                                <a>+91 9247518680 / 81</a>
+                                <a>+91 9247518680 / +91 9247518681</a>
                             </div>
                         </li>
                     </ul>
@@ -1310,7 +1335,7 @@ h1, h2, h3, h4, h5, h6, .ft-heading-default {
 
                     <ul class="import-link p-0 m-0 list-unstyled">
                         <li>
-                            <a href="javascript:void(0);">About Amritha</a>
+                            <a href="https://amrithahappyaging.com/about-us/">About Amritha</a>
                         </li>
                         <li>
                             <a href="javascript:void(0);">Our Care Approach</a>
@@ -1336,19 +1361,19 @@ h1, h2, h3, h4, h5, h6, .ft-heading-default {
 
                     <ul class="import-link p-0 m-0 list-unstyled">
                         <li>
-                            <a href="javascript:void(0);">Assisted Elder Care</a>
+                            <a href="https://amrithahappyaging.com/service/recovery-rehabilitation/">Rehabilitation</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0);">Nursing Care</a>
+                            <a href="https://amrithahappyaging.com/service/orthopaedic-rehab/">Orthopaedic Rehabilitation</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0);">Neuro & Ortho Rehabilitation</a>
+                            <a href="https://amrithahappyaging.com/service/neurology-rehab/">Neurological Rehabilitation</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0);">Wellness & Physiotherapy</a>
+                            <a href="https://amrithahappyaging.com/service/oncology-rehab/">Oncology & Rehabilitation</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0);">Palliative & Long-Term Care</a>
+                            <a href="https://amrithahappyaging.com/service/assisted-living-elder-care/">Assisted Living Elder Care</a>
                         </li>
                     </ul>
                 </div>

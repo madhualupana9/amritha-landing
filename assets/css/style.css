@@ -14468,7 +14468,7 @@ Page-navigation Area Style
 }
 .banner-content h1, .banner-content .h1 {
   color: #000000;
-  font-size: 60px;
+  font-size: 55px;
   font-weight: 400;
   line-height: 112.5%;
   margin-bottom: 25px;
@@ -17584,7 +17584,7 @@ Page-navigation Area Style
   color: #ffffff;
 }
 .footer-single-widget .info-list li a:hover {
-  color: #990000;
+  color: #ffffff;
 }
 .footer-single-widget .info-list li:last-child {
   margin-bottom: 0;
