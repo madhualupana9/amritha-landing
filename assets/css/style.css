@@ -12294,7 +12294,7 @@ body {
 
 a {
   transition: all ease 0.5s;
-  color: #666666;
+  color: #000000;
 }
 a:hover {
   color: #990000;
@@ -14493,7 +14493,7 @@ Page-navigation Area Style
   transition: all ease 0.5s;
 }
 .banner-content .banner-btn .call-us span {
-  color: #666666;
+  color: #000000;
 }
 .banner-content .banner-btn .call-us .number {
   font-weight: 500;
