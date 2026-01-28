@@ -12789,7 +12789,7 @@ Main Content Text Style
 ==================================================*/
 .top-title {
   color: #990000;
-  font-size: 19px;
+  font-size: 22px;
   font-weight: 700;
   letter-spacing: 1.4px;
   display: inline-block;
@@ -12871,7 +12871,7 @@ Main Content Text Style
 
 .mb-70 {
   margin-bottom: 70px;
-  margin-top: -14px;
+  margin-top: 1px;
 }
 
 .mb-80 {
@@ -12940,7 +12940,7 @@ html[class=rtl] .swiper .swiper-slide * {
     font-size: 70px;
   }
   .top-title {
-    font-size: 12px;
+    font-size: 19px;
   }
   .main-title {
     font-size: 25px;
@@ -15179,7 +15179,7 @@ Page-navigation Area Style
     margin-left: auto;
   }
   .work-content {
-    margin-top: -80px;
+    margin-top: 68px;
   }
   .how-we-work-area .col-lg-4 {
     position: relative;
