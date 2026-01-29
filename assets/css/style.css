@@ -14460,7 +14460,7 @@ Page-navigation Area Style
 /* Banner Area Style
 ============================================*/
 .banner-content {
-  padding-top: 300px;
+  padding-top: 267px;
   padding-bottom: 150px;
 }
 .banner-content .top-title {
@@ -14992,7 +14992,8 @@ Page-navigation Area Style
 }
 @media (min-width: 1399px) {
   .banner-img {
-    margin-left: -50px;
+    margin-left: -10px;
+    height: 615px;
   }
   /* .banner-content {
     max-width: 703px;
