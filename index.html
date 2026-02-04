@@ -1289,13 +1289,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <form class="contact-us-form" id="contactForm">
                     <div class="row g-4">
                         <div class="col-lg-6">
-                            <input type="text" class="form-control" name="name" placeholder="Your Name">
+                            <input type="text" class="form-control" name="name" placeholder="Your Name" required>
                         </div>
                         <div class="col-lg-6">
-                            <input type="email" class="form-control" name="email" placeholder="Your Email">
+                            <input type="email" class="form-control" name="email" placeholder="Your Email" required>
                         </div>
                         <div class="col-lg-6">
-                            <input type="number" class="form-control" name="phone" placeholder="Contact Number">
+                            <input type="number" class="form-control" name="phone" placeholder="Contact Number" required>
                         </div>
                         <div class="col-lg-6">
                             <select class="form-control mb-3" name="requires">
@@ -1530,9 +1530,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p>Get guidance on assisted living & rehabilitation</p>
 
         <form id="floatingForm">
-            <input type="text" name="name" class="form-control mb-3" placeholder="Your Name">
-            <input type="tel" name="phone" class="form-control mb-3" placeholder="Phone Number">
-            <select class="form-control mb-3" name="requires">
+            <input type="text" name="name" class="form-control mb-3" placeholder="Your Name" required>
+            <input type="tel" name="phone" class="form-control mb-3" placeholder="Phone Number" required>
+            <select class="form-control mb-3" name="requires" required>
                 <option value="">Care Requirement</option>
                 <option>Assisted Living</option>
                 <option>Rehabilitation Care</option>
@@ -1638,27 +1638,51 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 </script>
 
 <script>
+
+    function isValidIndianMobile(number) {
+    const cleaned = number.replace(/\s|-/g, '');
+    const regex = /^(?:\+91|91)?[6-9]\d{9}$/;
+    return regex.test(cleaned);
+    }
     
 document.getElementById('floatingForm')?.addEventListener('submit', function (e) {
     e.preventDefault();
+
+    const name = this.name.value.trim();
+    const phone = this.phone.value.trim();
+    const requires = this.requires.value.trim();
+
+    // ❌ Validation
+    if (!name) {
+        alert('Please enter your name');
+        return;
+    }
+
+    if (!phone || !isValidIndianMobile(phone)) {
+        alert('Please enter a valid Indian mobile number');
+        return;
+    }
+
+    if (!requires) {
+        alert('Please select your care requirement');
+        return;
+    }
+
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzjFg8FlbTEeotdD7SP6AlU2T4_gSf2zVlKUekRtraTPrhdQb-biOOy2EEqufIlC8Ys/exec";
     const submitBtn = document.getElementById('submitBtn');
     const btnText = submitBtn.querySelector('.btn-text');
     const btnLoader = submitBtn.querySelector('.btn-loader');
 
-    // Disable button & show loader
     submitBtn.disabled = true;
     btnText.classList.add('d-none');
     btnLoader.classList.remove('d-none');
 
     const formData = new FormData(this);
 
-    // 🔁 Replace SCRIPT_URL with your actual backend / Google Apps Script URL
     fetch(SCRIPT_URL, {
         method: 'POST',
         body: formData
     })
-    .then(res => res.text())
     .then(() => {
         this.reset();
         window.location.href = "thankyou.html";
@@ -1667,7 +1691,6 @@ document.getElementById('floatingForm')?.addEventListener('submit', function (e)
         alert('Something went wrong. Please try again.');
     })
     .finally(() => {
-        // Reset button state
         submitBtn.disabled = false;
         btnText.classList.remove('d-none');
         btnLoader.classList.add('d-none');
@@ -1677,24 +1700,54 @@ document.getElementById('floatingForm')?.addEventListener('submit', function (e)
 
 document.getElementById('contactForm')?.addEventListener('submit', function (e) {
     e.preventDefault();
+
+    const name = this.name.value.trim();
+    const email = this.email.value.trim();
+    const phone = this.phone.value.trim();
+    const requires = this.requires.value.trim();
+    const message = this.message.value.trim();
+
+    // ❌ Validation
+    if (!name) {
+        alert('Please enter your name');
+        return;
+    }
+
+    if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+        alert('Please enter a valid email address');
+        return;
+    }
+
+    if (!phone || !isValidIndianMobile(phone)) {
+        alert('Please enter a valid Indian mobile number');
+        return;
+    }
+
+    if (!requires) {
+        alert('Please select your care requirement');
+        return;
+    }
+
+    if (!message) {
+        alert('Please enter your message');
+        return;
+    }
+
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzjFg8FlbTEeotdD7SP6AlU2T4_gSf2zVlKUekRtraTPrhdQb-biOOy2EEqufIlC8Ys/exec";
     const submitBtn = document.getElementById('consultSubmitBtn');
     const btnText = submitBtn.querySelector('.btn-text');
     const btnLoader = submitBtn.querySelector('.btn-loader2');
 
-    // Disable button & show loader
     submitBtn.disabled = true;
     btnText.classList.add('d-none');
     btnLoader.classList.remove('d-none');
 
     const formData = new FormData(this);
 
-    // 🔁 Replace SCRIPT_URL with your actual backend / Google Apps Script URL
     fetch(SCRIPT_URL, {
         method: 'POST',
         body: formData
     })
-    .then(res => res.text())
     .then(() => {
         this.reset();
         window.location.href = "thankyou.html";
@@ -1703,7 +1756,6 @@ document.getElementById('contactForm')?.addEventListener('submit', function (e) 
         alert('Something went wrong. Please try again.');
     })
     .finally(() => {
-        // Reset button state
         submitBtn.disabled = false;
         btnText.classList.remove('d-none');
         btnLoader.classList.add('d-none');
