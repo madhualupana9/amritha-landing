@@ -15632,15 +15632,15 @@ Page-navigation Area Style
   transition: all ease 0.5s;
 }
 .fun-fact-single-item img {
-  margin-bottom: 25px;
+  margin-bottom: -3px;
 }
 .fun-fact-single-item h2, .fun-fact-single-item .h2 {
-  font-size: 50px;
+  font-size: 41px;
   line-height: 116.667%;
   margin-bottom: 10px;
 }
 .fun-fact-single-item p {
-  font-size: 18px;
+  font-size: 16px;
 }
 .fun-fact-single-item:hover {
   border-color: #990000;
