@@ -338,6 +338,101 @@ h1, h2, h3, h4, h5, h6, .ft-heading-default {
     }
 }
 
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .gallery-item img {
+        height: 220px;
+    }
+}
+/* ===== Gallery Lightbox ===== */
+.gallery-lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+    z-index: 99999;
+}
+
+.gallery-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.gallery-lightbox img {
+    max-width: 90%;
+    max-height: 85vh;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    animation: zoomIn 0.35s ease;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    font-size: 38px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 300;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .lightbox-close {
+        top: 18px;
+        right: 20px;
+        font-size: 32px;
+    }
+}
+
+
+.gallery-mobile .gallery-item img {
+    height: 240px;
+    border-radius: 18px;
+}
+
+.gallery-mobile .swiper {
+    padding-bottom: 30px;
+}
+
+.gallery-mobile .swiper-pagination-bullet {
+    background: #990000;
+}
 </style>
 
 </head>
@@ -427,7 +522,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <a class="nav-link active" href="#home">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#how-we-work">Our Services</a>
+                                <a class="nav-link" href="#services">Our Services</a>
                             </li>
                             <!-- <li class="nav-item">
                                 <a class="nav-link" href="#services"></a>
@@ -663,7 +758,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 <!-- Start Work Area -->
-<div class="work-area pt-120" id="how-we-work">
+<div class="work-area pt-120" id="services">
     <div class="container mw-1685">
         <div class="row gy-2" data-cues="slideInUp" data-duration="900">
             <div class="col-lg-4">
@@ -878,10 +973,131 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </style>
 <!-- End Work Area -->
 
+<!-- Start Gallery Area -->
+<div class="gallery-area ptb-120" style="background-color:#ffffff;">
+    <div class="container mw-1685">
+
+        <div class="row gy-2 mb-70" data-cues="slideInUp" data-duration="900">
+    <div class="col-lg-12">
+        <h2 class="main-title mt-2" style="color:#990000;">
+            A Glimpse Into Life at Amritha
+        </h2>
+    </div>
+</div>
+
+       <!-- Desktop Gallery (Grid) -->
+<div class="gallery-desktop d-none d-md-block">
+    <div class="row g-4">
+
+        <div class="col-lg-4 col-md-6">
+            <div class="gallery-item" data-full="assets/images/gallery/image1.webp">
+                <img src="assets/images/gallery/image1.webp" alt="Care Facility">
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+            <div class="gallery-item" data-full="assets/images/gallery/image2.webp">
+                <img src="assets/images/gallery/image2.webp" alt="Rehabilitation Area">
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+            <div class="gallery-item" data-full="assets/images/gallery/image3.webp">
+                <img src="assets/images/gallery/image3.webp" alt="Patient Care">
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+            <div class="gallery-item" data-full="assets/images/gallery/image4.webp">
+                <img src="assets/images/gallery/image4.webp" alt="Physiotherapy">
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+            <div class="gallery-item" data-full="assets/images/gallery/image5.webp">
+                <img src="assets/images/gallery/image5.webp" alt="Room">
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+            <div class="gallery-item" data-full="assets/images/gallery/image7.webp">
+                <img src="assets/images/gallery/image7.webp" alt="Care">
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+            <div class="gallery-item" data-full="assets/images/gallery/image8.webp">
+                <img src="assets/images/gallery/image8.webp" alt="Support">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Mobile Gallery Slider -->
+<div class="gallery-mobile d-block d-md-none">
+    <div class="swiper gallerySwiper">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div class="gallery-item" data-full="assets/images/gallery/image1.webp">
+                    <img src="assets/images/gallery/image1.webp" alt="">
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="gallery-item" data-full="assets/images/gallery/image2.webp">
+                    <img src="assets/images/gallery/image2.webp" alt="">
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="gallery-item" data-full="assets/images/gallery/image3.webp">
+                    <img src="assets/images/gallery/image3.webp" alt="">
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="gallery-item" data-full="assets/images/gallery/image4.webp">
+                    <img src="assets/images/gallery/image4.webp" alt="">
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="gallery-item" data-full="assets/images/gallery/image5.webp">
+                    <img src="assets/images/gallery/image5.webp" alt="">
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="gallery-item" data-full="assets/images/gallery/image7.webp">
+                    <img src="assets/images/gallery/image7.webp" alt="">
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="gallery-item" data-full="assets/images/gallery/image8.webp">
+                    <img src="assets/images/gallery/image8.webp" alt="">
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Pagination dots -->
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+
+    </div>
+</div>
+<!-- End Gallery Area -->
+
+
 
 
        <!-- Start Fun Fact Area -->
-<div class="fun-fact-area ptb-120">
+<!-- <div class="fun-fact-area ptb-120">
     <div class="container mw-1685">
         <div class="row g-4" data-cues="slideInUp" data-duration="900">
             <div class="col-lg-3 col-sm-6">
@@ -922,7 +1138,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- End Fun Fact Area -->
 
         <!-- Start Why Choose Us Area -->
@@ -1555,7 +1771,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 </div>
 
-     
+ 
         <!-- Link Of JS File -->
       <script src="assets/js/bootstrap.bundle.min.js"></script>
         <script src="assets/js/swiper-bundle.min.js"></script>
@@ -1773,6 +1989,97 @@ document.getElementById('contactForm')?.addEventListener('submit', function (e) 
         btnLoader.classList.add('d-none');
     });
 });
+
+
+// const galleryItems = document.querySelectorAll('.gallery-item');
+const lightbox = document.getElementById('galleryLightbox');
+const lightboxImg = document.getElementById('lightboxImage');
+const floatingCloseBtn = document.querySelector('.lightbox-close');
+
+galleryItems.forEach(item => {
+    item.addEventListener('click', () => {
+        const imgSrc = item.getAttribute('data-full');
+        lightboxImg.src = imgSrc;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+});
+
+// Close handlers
+closeBtn.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) closeLightbox();
+});
+
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLightbox();
+});
+
+function closeLightbox() {
+    lightbox.classList.remove('active');
+    lightboxImg.src = '';
+    document.body.style.overflow = '';
+}
 </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const lightbox = document.getElementById('galleryLightbox');
+    const lightboxImg = document.getElementById('lightboxImage');
+    const galleryCloseBtn = document.querySelector('.lightbox-close');
+
+    if (!galleryItems.length || !lightbox) return;
+
+    galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const imgSrc = item.getAttribute('data-full');
+            if (!imgSrc) return;
+
+            lightboxImg.src = imgSrc;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    galleryCloseBtn.addEventListener('click', closeGallery);
+    lightbox.addEventListener('click', e => {
+        if (e.target === lightbox) closeGallery();
+    });
+
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeGallery();
+    });
+
+    function closeGallery() {
+        lightbox.classList.remove('active');
+        lightboxImg.src = '';
+        document.body.style.overflow = '';
+    }
+
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (window.innerWidth < 768) {
+        new Swiper('.gallerySwiper', {
+            slidesPerView: 1.1,
+            spaceBetween: 15,
+            centeredSlides: true,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            }
+        });
+    }
+});
+</script>
+
+    <!-- Gallery Lightbox -->
+<div class="gallery-lightbox" id="galleryLightbox">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightboxImage" src="" alt="Gallery Preview">
+</div>
     </body>
 </html>
