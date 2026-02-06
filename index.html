@@ -651,7 +651,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="col-xl-6">
                 <div class="banner-img" data-group="images" data-cues="slideInUp" data-duration="900">
                     <!-- <span class="border-text">Elder Care</span> -->
-                    <img src="assets/images/bannerstyles33.webp" alt="banner-img" style="border-radius: 21px;";>
+                    <img src="assets/images/amritha-image.webp" alt="banner-img" style="border-radius: 21px;";>
 
                     
                 </div>
@@ -1597,6 +1597,18 @@ document.addEventListener('click', (e) => {
     ) {
         closeForm();
     }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Auto open floating form on page load
+    setTimeout(() => {
+        toggleBtn.style.display = 'none';
+        floatingForm.style.display = 'block';
+
+        if (window.innerWidth <= 768) {
+            floatingForm.classList.add('active'); // mobile bottom sheet
+        }
+    }, 600); // small delay for smooth UX
 });
 
 function closeForm() {
