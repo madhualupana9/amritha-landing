@@ -15007,7 +15007,7 @@ Page-navigation Area Style
 @media (min-width: 1399px) {
   .banner-img {
     margin-left: -10px;
-    height: 615px;
+    /* height: 615px; */
   }
   /* .banner-content {
     max-width: 703px;
